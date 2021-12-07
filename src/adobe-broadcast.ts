@@ -19,6 +19,7 @@ client.on('error', (error: Error) => {
     console.error(`Adobe Broadcast error: ${JSON.stringify(error)}`);
 });
 
-client.write(message, () => { 
+client.write(message, () => {
+    client.destroy();
     process.exit();
 });

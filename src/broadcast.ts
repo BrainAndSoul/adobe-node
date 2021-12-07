@@ -8,13 +8,13 @@ const broadcastMethods: Map<AdobeAppName, (cmd: string) => string> = new Map<Ado
 ]);
 
 const buildBroadcastCommand = (host: string, port: number, message: string) =>
-  `adobe-broadcast --host='${host}' --port=${port} --msg='${message}'`;
+    `adobe-broadcast --host=${host} --port=${port} --msg=${message}`;
 
 export const newBroadcastBuilder = (config: Config): BroadcastBuilder => {
 
   return {
     build(command: string) {
-      const payload: string = `{\\"command\\":\\"${command}\\",\\"stdout\\":\\"" + __stdout + "\\", \\"stderr\\":\\"" + __stderr + "\\" }`;
+      const payload: string = `{\\\\\\"command\\\\\\":\\\\\\"${command}\\\\\\",\\\\\\"stdout\\\\\\":\\\\\\"" + __stdout + "\\\\\\",\\\\\\"stderr\\\\\\":\\\\\\"" + __stderr + "\\\\\\"}`;
       const broadcast: (msg: string) => string = broadcastMethods.get(config.app.name);
       const cmd: string = buildBroadcastCommand(config.host, config.port, payload);
       return broadcast(cmd);
