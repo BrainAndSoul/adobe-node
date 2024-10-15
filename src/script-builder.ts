@@ -9,7 +9,7 @@ var ___{{__command__}} = (function() {
       {{__vars__}}  
       __stdout = {{__fn__}}
     } catch (e) {
-      __stderr = e;
+      __stderr = encodeURI(e.toString());
     } finally {
       {{__broadcast__}}
     }
