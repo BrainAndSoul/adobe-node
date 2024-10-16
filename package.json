@@ -4,7 +4,8 @@
   "description": "Control Adobe applications - such as Photoshop, Animate, Illustrator, InDesign - from node. Run JavaScript to remotely - from the command line - create, modify or export document content. This module can be used to automate the workflow by creating an action chain that can be executed without user intervention.",
   "main": "dist/index",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "bin": {
     "adobe-broadcast": "dist/adobe-broadcast.js"
