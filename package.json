@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/rkamysz/adobe-node#readme",
   "devDependencies": {
-    "@types/node": "^12.12.5",
+    "@types/node": "^12.20.55",
     "typescript": "^5.6.3"
   },
   "dependencies": {
